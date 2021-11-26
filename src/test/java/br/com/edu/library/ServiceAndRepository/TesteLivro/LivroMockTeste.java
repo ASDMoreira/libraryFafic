@@ -1,4 +1,4 @@
-package br.com.edu.library.ServiceAndRepository;
+package br.com.edu.library.ServiceAndRepository.TesteLivro;
 
 
 import br.com.edu.library.LibraryManagerApplication;
@@ -26,7 +26,7 @@ public class LivroMockTeste {
 
 
     @Test
-    public void testCreateProfessorMock() {
+    public void testCreateLivroMock() {
         Book livro1 = new Book();
 
         when(repository.save(livro1)).thenReturn(livro1);
@@ -35,7 +35,7 @@ public class LivroMockTeste {
 
     }
     @Test
-    public void testDeleteProfessorMock() {
+    public void testDeleteLivroMock() {
         Book livro1 = new Book();
 
         when(repository.save(livro1)).thenReturn(livro1);
