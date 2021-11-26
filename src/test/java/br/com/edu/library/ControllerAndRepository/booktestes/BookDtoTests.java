@@ -30,11 +30,11 @@ public class BookDtoTests {
 
 
     @Test
-    public void testGetBook() throws Exception{
+    public void testGetBooks() throws Exception{
         BookDTO dto = new BookDTO();
         dto.setName("book2");
         dto.setField(BookField.EXACT);
-        dto.setIsbn("4A");
+        dto.setIsbn("2B");
 
 
         Book result = dto.to();

@@ -1,4 +1,4 @@
-package br.com.edu.library.ServiceAndRepository;
+package br.com.edu.library.ServiceAndRepository.TesteProfessor;
 
 
 import br.com.edu.library.LibraryManagerApplication;
@@ -29,8 +29,8 @@ public class ProfessorServiceCreateTest {
     public void testCreate() throws Exception{
         Professor professor1 = new Professor();
         Library library = new Library();
-        library.setName("FaficBiblio");
-        library.setInstitution("Fafic");
+        library.setName("UFCG");
+        library.setInstitution("ufcg");
 
         library = libraryService.save(library);
 
@@ -48,13 +48,13 @@ public class ProfessorServiceCreateTest {
         address.setNumber("13");
         address.setDistrict("Cajazeiras");
         address.setStreet("Rua1");
-        professor1.setName("Ana");
-        professor1.setCpf("1234");
+        professor1.setName("AnaS");
+        professor1.setCpf("444");
         professor1.setGender(Gender.FEMALE);
         professor1.setAddress(address);
-        professor1.setPassword("ana12");
+        professor1.setPassword("ana43");
         professor1.setTeacherCourse(teacherCourse);
-        professor1.setRegistration("123");
+        professor1.setRegistration("1265");
         professor1.setLibrary(library);
         professor1.setContact(contact);
 

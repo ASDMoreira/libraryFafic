@@ -1,4 +1,4 @@
-package br.com.edu.library.ServiceAndRepository;
+package br.com.edu.library.ServiceAndRepository.TesteLivro;
 
 import br.com.edu.library.domain.Book;
 import br.com.edu.library.repository.BookRepository;

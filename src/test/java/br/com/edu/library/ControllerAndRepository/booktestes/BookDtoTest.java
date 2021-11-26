@@ -6,6 +6,7 @@ import br.com.edu.library.dto.impl.BookDTO;
 import br.com.edu.library.enumerators.BookField;
 import br.com.edu.library.repository.BookRepository;
 import br.com.edu.library.service.impl.BookService;
+import org.assertj.core.api.AssertionsForClassTypes;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,14 +31,16 @@ public class BookDtoTest {
     @Test
     public void testGetBook() throws Exception{
         BookDTO dto = new BookDTO();
-        dto.setName("livro1");
+        dto.setName("livro");
         dto.setField(BookField.EXACT);
-        dto.setIsbn("3C");
+        dto.setIsbn("1A");
 
         Book resultado = dto.to();
 
         when(service.save(resultado)).thenReturn(repository.save(resultado));
         assertThat(controller.create(dto).getStatusCode()).isEqualTo(HttpStatus.OK);
+
+
 
     }
 }
