@@ -27,17 +27,23 @@ public class LibraryMockTest {
 
     @Test
     public void testGetLibrary() throws Exception{
-        LibraryDTO dto = new LibraryDTO();
-        dto.setName("Fafic");
-        dto.setInstitution("FAFIC");
+        Library biblio1 = new Library();
+        biblio1.setName("Fafic1");
+        biblio1.setInstitution("FAFIC1");
 
-        Library result = dto.to();
+        Library result1 = biblio1;
 
-        when(service.save(result)).thenReturn(repository.save(result));
+        Library biblio2 = new Library();
+        biblio2.setName("Fafic2");
+        biblio2.setInstitution("FAFIC2");
 
-        assertThat(service.save(result).getName()).isEqualTo(result.getName());
+        Library result2 = biblio2;
 
-        verify(service).save(result);
+        when(service.save(result1)).thenReturn(repository.save(result1));
+
+        assertThat(service.save(result1).getName()).isNotEqualTo(result2.getName());
+
+        verify(service).save(result1);
 
 
 

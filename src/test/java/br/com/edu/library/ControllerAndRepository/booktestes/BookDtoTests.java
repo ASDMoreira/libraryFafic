@@ -34,7 +34,7 @@ public class BookDtoTests {
         BookDTO dto = new BookDTO();
         dto.setName("book2");
         dto.setField(BookField.EXACT);
-        dto.setIsbn("2F");
+        dto.setIsbn("2Z");
 
 
         Book result = dto.to();
