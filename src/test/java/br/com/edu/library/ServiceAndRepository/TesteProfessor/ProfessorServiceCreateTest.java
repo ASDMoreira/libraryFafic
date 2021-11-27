@@ -29,8 +29,8 @@ public class ProfessorServiceCreateTest {
     public void testCreate() throws Exception{
         Professor professor1 = new Professor();
         Library library = new Library();
-        library.setName("UFCG");
-        library.setInstitution("ufcg");
+        library.setName("UFCGG");
+        library.setInstitution("ufcgG");
 
         library = libraryService.save(library);
 
@@ -49,12 +49,12 @@ public class ProfessorServiceCreateTest {
         address.setDistrict("Cajazeiras");
         address.setStreet("Rua1");
         professor1.setName("AnaS");
-        professor1.setCpf("444");
+        professor1.setCpf("443");
         professor1.setGender(Gender.FEMALE);
         professor1.setAddress(address);
-        professor1.setPassword("ana43");
+        professor1.setPassword("ana45");
         professor1.setTeacherCourse(teacherCourse);
-        professor1.setRegistration("1265");
+        professor1.setRegistration("1260");
         professor1.setLibrary(library);
         professor1.setContact(contact);
 

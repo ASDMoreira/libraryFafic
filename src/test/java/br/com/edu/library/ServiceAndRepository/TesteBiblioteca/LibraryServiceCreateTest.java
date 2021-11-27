@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.mockito.Mockito.verify;
 
 @SpringBootTest(classes = LibraryManagerApplication.class)
 public class LibraryServiceCreateTest {
@@ -19,14 +20,38 @@ public class LibraryServiceCreateTest {
     private LibraryService libraryService;
 
     @Test
-    public void testCreate() throws Exception{
-        Library livraria = new Library();
+    public void testCreateLibrary1() throws Exception{
+        Library livraria1 = new Library();
 
-        livraria.setName("Biblioteca Fafic");
-        livraria.setInstitution("Fafics");
+        livraria1.setName("BiFafic");
+        livraria1.setInstitution("Fafics");
 
-        Library resultado = libraryService.save(livraria);
+        Library livraria2 = new Library();
+        livraria2.setName("BiFafic");
+        livraria2.setInstitution("Fafics2");
 
-        assertThat(resultado.getName()).isEqualTo(livraria.getName());
+        Library resultado1 = libraryService.save(livraria1);
+        Library resultado2 = libraryService.save(livraria2);
+
+        assertThat(resultado1.getName()).isEqualTo(resultado2.getName());
+    }
+
+    @Test
+    public void testCreateLibrary2() throws Exception{
+        Library livraria1 = new Library();
+
+        livraria1.setName("BiFafic1");
+        livraria1.setInstitution("Fafics");
+
+        Library livraria2 = new Library();
+        livraria2.setName("BiFafic2");
+        livraria2.setInstitution("Fafics2");
+
+        Library resultado1 = libraryService.save(livraria1);
+        Library resultado2 = libraryService.save(livraria2);
+
+        assertThat(resultado1.getName()).isNotEqualTo(resultado2.getName());
+
+
     }
 }

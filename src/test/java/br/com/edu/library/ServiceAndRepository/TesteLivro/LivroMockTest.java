@@ -1,6 +1,7 @@
 package br.com.edu.library.ServiceAndRepository.TesteLivro;
 
 import br.com.edu.library.domain.Book;
+import br.com.edu.library.enumerators.BookField;
 import br.com.edu.library.repository.BookRepository;
 import br.com.edu.library.service.impl.BookService;
 import org.junit.jupiter.api.Test;
@@ -24,16 +25,26 @@ public class LivroMockTest {
 
 
     @Test
-    public void testCreateProfessorMock() {
+    public void testCreateLivroMock() {
         Book livro1 = new Book();
+        livro1.setName("Livro1");
+        livro1.setIsbn("2b");
+        livro1.setField(BookField.EXACT);
+
+
+        Book livro2 = new Book();
+        livro2.setName("Livro2");
+        livro2.setIsbn("3b");
+        livro2.setField(BookField.EXACT);
 
         when(repository.save(livro1)).thenReturn(livro1);
-        assertThat(service.save(livro1)).isEqualTo(livro1);
+        assertThat(service.save(livro1)).isNotEqualTo(livro2);
+
 
 
     }
     @Test
-    public void testDeleteProfessorMock() {
+    public void testDeleteLivroMock() {
         Book livro1 = new Book();
 
         when(repository.save(livro1)).thenReturn(livro1);

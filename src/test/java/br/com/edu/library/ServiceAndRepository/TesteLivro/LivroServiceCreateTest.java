@@ -28,26 +28,33 @@ public class LivroServiceCreateTest {
 
     @Order(1)
     @Test
-    public void testCreate() throws Exception{
+    public void testCreateOnPostgres() throws Exception{
         Book livro1 = new Book();
 
-
-        livro1.setIsbn("1H");
-        livro1.setName("Testes");
+        livro1.setIsbn("1m");
+        livro1.setName("Testes1");
         livro1.setField(BookField.EXACT);
+
+
 
         Book resultado = service.save(livro1);
         idLivro = resultado.getId();
 
+        Book livro2= new Book();
 
-        assertThat(resultado.getName()).isEqualTo(livro1.getName());
+        livro2.setIsbn("1o");
+        livro2.setName("Testes1");
+        livro2.setField(BookField.EXACT);
+
+
+        assertThat(resultado.getName()).isEqualTo(livro2.getName());
 
 
     }
 
     @Order(2)
     @Test
-    public void testDelete() throws Exception{
+    public void testDeleteOnPostgres() throws Exception{
 
         assertThat(service.deleteById(idLivro)).isTrue();
 
